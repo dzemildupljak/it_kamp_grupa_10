@@ -1,0 +1,20 @@
+.mojdDiv {
+  background-color: #04aa6d;
+  width: 400px;
+  border: 5px solid #282a35;
+  height: 200px;
+  padding: 10px 10px 25px 21px;
+  margin: 30px;
+  border-radius: 25px;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+.mojdDiv h1,
+.drugaKlasa h3 {
+  background-color: red;
+}
