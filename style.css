@@ -1,20 +1,26 @@
-.mojdDiv {
-  background-color: #04aa6d;
-  width: 400px;
-  border: 5px solid #282a35;
-  height: 200px;
-  padding: 10px 10px 25px 21px;
-  margin: 30px;
-  border-radius: 25px;
+.card {
+  width: 460px;
+  height: 500px;
+  border: 1px solid #abadae;
+  border-radius: 10px;
+  display: inline-block;
+  /* overflow: hidden; */
 }
 
-h1,
-h3,
-p {
+.card img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card_body {
+  padding: 25px;
+}
+.card .card_body .card_subtitle {
+  text-transform: uppercase;
   margin: 0;
 }
 
-.mojdDiv h1,
-.drugaKlasa h3 {
-  background-color: red;
+.card .card_body .link {
+  color: #777af3;
+  font-size: 20px;
 }
