@@ -453,20 +453,79 @@
 
 // console.log(sum);
 
-arr = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
+// arr = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
 
+// 1
+//   5
+//     9
 
-1
-  5
-    9
+// suma glavne dijagolne gorenavedeni brojevi
 
-suma glavne dijagolne gorenavedeni brojevi
+//     3
+//   5
+// 7
+// suma sporedne dijagolne gorenavedeni brojevi
 
-    3
-  5
-7
-suma sporedne dijagolne gorenavedeni brojevi
+// arr = [12, 32, 5, 32, 21, 21];
+
+// arr.reduce((prev, curr) => {}, 0);
+
+// color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+// o = ["th", "st", "nd", "rd"];
+
+// color.forEach((color, i) => {
+//   switch (i + 1) {
+//     case 1:
+//       console.log(`${i + 1}${o[1]} ${color}`);
+//       break;
+//     case 2:
+//       console.log(`${i + 1}${o[2]} ${color}`);
+//       break;
+//     case 3:
+//       console.log(`${i + 1}${o[3]} ${color}`);
+//       break;
+//     default:
+//       console.log(`${i + 1}${o[0]} ${color}`);
+//       break;
+//   }
+// });
+
+// array1 = [1, 0, 2, 3, 34, 2, 323, 4];
+// array2 = [3, 5, 6, 7, 8, 13];
+// array3 = [];
+
+// if (array1.length > array2.length) {
+//   array3 = array1.map((el, i) => {
+//     if (array2[i]) {
+//       return el + array2[i];
+//     } else {
+//       return el;
+//     }
+//   });
+// } else {
+//   array3 = array2.map((el, i) => {
+//     if (array1[i]) {
+//       return el + array1[i];
+//     } else {
+//       return el;
+//     }
+//   });
+// }
+
+// console.log(array3);
+
+arr = [NaN, 0, 15, false, -22, "", undefined, 47, null];
+
+// arr = arr.filter((el) => el && el);
+
+arr = arr.filter((el) => {
+  if (el) {
+    return el;
+  }
+});
+
+console.log(arr);
