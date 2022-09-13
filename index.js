@@ -518,14 +518,167 @@
 
 // console.log(array3);
 
-arr = [NaN, 0, 15, false, -22, "", undefined, 47, null];
+// arr = [NaN, 0, 15, false, -22, "", undefined, 47, null];
 
-// arr = arr.filter((el) => el && el);
+// // arr = arr.filter((el) => el && el);
 
-arr = arr.filter((el) => {
-  if (el) {
-    return el;
-  }
-});
+// arr = arr.filter((el) => {
+//   if (el) {
+//     return el;
+//   }
+// });
 
-console.log(arr);
+// console.log(arr);
+
+// var1 = {
+//   key3: "vred3",
+//   key1: "vred1",
+//   key2: "vred2",
+// };
+
+// user = {
+//   location: "srb",
+//   lastName: "dupljak",
+//   password: "sfira123",
+//   name: "dzemil",
+//   isLive: true,
+// };
+
+// // Write a JavaScript program to get the length of a JavaScript object.
+
+// console.log(Object.keys(user));
+// console.log(Object.keys(user).length);
+
+// var library = [
+//   {
+//     author: "Bill Gates",
+//     title: "The Road Ahead",
+//     readingStatus: true,
+//   },
+//   {
+//     author: "Steve Jobs",
+//     title: "Walter Isaacson",
+//     readingStatus: true,
+//   },
+//   {
+//     author: "Suzanne Collins",
+//     title: "Mockingjay: The Final Book of The Hunger Games",
+//     readingStatus: false,
+//   },
+// ];
+
+// library.forEach((book) => {
+//   console.log(book.author, book.readingStatus);
+// });
+
+// Chickenwings: 5 points
+
+// Hamburgers: 3 points
+
+// Hotdogs: 2 points
+// players = [
+//   { name: "Habanero Hillary", chickenwings: 5, hamburgers: 17, hotdogs: 11 },
+//   { name: "Big Bob", chickenwings: 20, hamburgers: 4, hotdogs: 11 },
+// ];
+
+// points = {
+//   chickenwings: 5,
+//   hamburgers: 3,
+//   hotdogs: 2,
+// };
+
+// scoreboard = players.map((player) => {
+//   let playerpoints = 0;
+//   Object.keys(points).forEach((key) => {
+//     playerpoints += player[key] * points[key];
+//   });
+
+//   return { name: player.name, score: playerpoints };
+// });
+
+// console.log(scoreboard);
+
+// user = {
+//   lastName: "dupljak",
+//   password: "sfira123",
+//   location: {
+//     address: "NP",
+//     country: "SRB",
+//   },
+//   name: "dzemil",
+//   isLive: true,
+// };
+
+// user2 = {
+//   ...user,
+//   location: {
+//     ...user.location,
+//   },
+// };
+
+// user.lastName = "asdsadasd";
+// user.location.address = "NY";
+
+// // console.log(user);
+// // console.log("======================================");
+// // console.log(user2);
+
+// word = "abracadabra";
+
+// word = word.split("");
+
+// result = {};
+
+// word.forEach((letter) => {
+//   if (result[letter]) {
+//     result[letter] += 1;
+//   } else {
+//     result[letter] = 1;
+//   }
+// });
+
+// console.log(result);
+// console.log(Object.entries(result));
+
+// ["a", "b", "c", "d"];
+
+// a = {
+//   0: "a",
+//   1: "b",
+//   2: "c",
+//   3: "d",
+// };
+
+// user = ["Emir", 180, "Demir", 70, 2606005783944];
+
+// user = {
+//   name: "Emir",
+//   lastname: "Demir",
+//   height: 180,
+//   weight: 70,
+//   jmbg: 2606005783944,
+//   phoneNum: {
+//     personal: 123,
+//     home: 456,
+//     company: 444,
+//   },
+// };
+
+// console.log(user.name);
+
+// arr1 = { a: 1 };
+// arr2 = { a: 1 };
+// console.log(arr1 === arr2);
+
+const data = { a: 1, b: 2 };
+const data2 = { a: 1, b: 2 };
+
+// console.log(Object.keys(data));
+
+res = Object.keys(data).every((key) => data[key] === data2[key]);
+
+if (Object.keys(data).length === Object.keys(data2).length && res) {
+  console.log(true);
+} else {
+  console.log(false);
+}
