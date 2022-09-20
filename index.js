@@ -664,21 +664,201 @@
 //   },
 // };
 
-// console.log(user.name);
+// // console.log(user.name);
 
-// arr1 = { a: 1 };
-// arr2 = { a: 1 };
-// console.log(arr1 === arr2);
+// // arr1 = { a: 1 };
+// // arr2 = { a: 1 };
+// // console.log(arr1 === arr2);
 
-const data = { a: 1, b: 2 };
-const data2 = { a: 1, b: 2 };
+// const data = { a: 1, b: 2 };
+// const data2 = { a: 1, b: 2 };
 
-// console.log(Object.keys(data));
+// // console.log(Object.keys(data));
 
-res = Object.keys(data).every((key) => data[key] === data2[key]);
+// res = Object.keys(data).every((key) => data[key] === data2[key]);
 
-if (Object.keys(data).length === Object.keys(data2).length && res) {
-  console.log(true);
-} else {
-  console.log(false);
+// if (Object.keys(data).length === Object.keys(data2).length && res) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+
+// // arr1 = { a: 1 };
+// // arr2 = { a: 1 };
+// // console.log(arr1 === arr2);
+
+// const data = { a: 1, b: 2 };
+// const data2 = { a: 1, b: 2 };
+
+// // console.log(Object.keys(data));
+
+// res = Object.keys(data).every((key) => data[key] === data2[key]);
+
+// if (Object.keys(data).length === Object.keys(data2).length && res) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+
+// // arr1 = { a: 1 };
+// // arr2 = { a: 1 };
+// // console.log(arr1 === arr2);
+
+// const data = { a: 1, b: 2 };
+// const data2 = { a: 1, b: 2 };
+
+// // console.log(Object.keys(data));
+
+// res = Object.keys(data).every((key) => data[key] === data2[key]);
+
+// if (Object.keys(data).length === Object.keys(data2).length && res) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+
+// function func1(name, age, isLive) {
+//   console.log("func1");
+//   console.log(name);
+//   console.log(age);
+//   console.log(isLive);
+
+//   return "hello world";
+// }
+
+// retrunVal = func1("dzemil", 27, true);
+
+// console.log(retrunVal);
+
+// function evenOddNum(number) {
+//   if (number % 2 === 0) {
+//     console.log("PARAN");
+//   } else {
+//     console.log("NePARAN");
+//   }
+// }
+
+// for (let i = 0; i < 4; i++) {
+//   inputValue = Number(prompt("Unesite broj:"));
+
+//   evenOddNum(inputValue);
+// }
+
+// function sumNums(num1, num2) {
+//   sum = num1 + num2;
+
+//   return sum;
+// }
+
+// for (let i = 0; i < 3; i++) {
+//   res = sumNums(3, 5);
+//   console.log(res);
+// }
+
+// function nazivFucnje(var1, arg2, nesto3) {}
+
+// result = nazivFucnje();
+
+// console.log(result);
+
+// function modifyMultiply(str, loc, num) {
+//   wordArr = str.split(" ");
+//   word = [];
+
+//   for (let i = 0; i < num; i++) {
+//     word.push(wordArr[loc]);
+//   }
+
+//   word = word.join("-");
+
+//   return word;
+// }
+
+// function modifyMultiply(str, i, n) {
+//   return Array(n).fill(str.split(" ")[i]).join("-");
+// }
+
+// result = modifyMultiply("crazy fox jumps over the lazy dog", 4, 3);
+// // "string-string-string-string-string"
+
+// console.log(result);
+// function stantonMeasure(argArr) {
+//   occ1 = 0;
+//   argArr.forEach((num) => {
+//     if (num === 1) {
+//       occ1 += 1;
+//     }
+//   });
+
+//   occNum = 0;
+
+//   argArr.forEach((num) => {
+//     if (num === occ1) {
+//       occNum += 1;
+//     }
+//   });
+
+//   return occNum;
+// }
+
+// function countOcc(arr, n) {
+//   counter = 0;
+
+//   arr.forEach((num) => {
+//     if (num === n) {
+//       counter += 1;
+//     }
+//   });
+
+//   return counter;
+// }
+
+// function stantonMeasure(arr) {
+//   occ1 = countOcc(arr, 1);
+//   numOcc = countOcc(arr, occ1);
+
+//   return numOcc;
+// }
+
+// arr = [1, 4, 3, 2, 1, 2, 3, 2];
+
+// result = stantonMeasure(arr);
+
+// console.log(result);
+
+// function dayOfTheWeek(date) {
+//   return "Monday";
+// }
+
+// dayOfTheWeek("02/06/1940");
+
+// function abbrevName(name) {
+//   // code away
+//   warr = name.split(" ");
+
+//   initials = warr[0][0].toUpperCase() + "." + warr[1][0].toUpperCase();
+//   return initials;
+// }
+
+// // "dzemil dupljak"
+// // ("D.D");
+
+// result = abbrevName("dzemil Dupljak");
+
+// console.log(result);
+
+function switcheroo(x) {
+  xArr = x.split("");
+  xArr = xArr.map((letter) => {
+    if (letter === "a") return "b";
+    else if (letter === "b") return "a";
+    else return letter;
+  });
+
+  return xArr.join("");
 }
+
+result = switcheroo("aabacbaa");
+
+console.log("aabacbaa");
+console.log(result);
