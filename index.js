@@ -847,18 +847,661 @@
 
 // console.log(result);
 
-function switcheroo(x) {
-  xArr = x.split("");
-  xArr = xArr.map((letter) => {
-    if (letter === "a") return "b";
-    else if (letter === "b") return "a";
-    else return letter;
+// function switcheroo(x) {
+//   // create arr of letter
+//   xArr = x.split("");
+//   // create new arr with swithed lietter a to b and vice versa
+//   xArr = xArr.map((letter) => {
+//     if (letter === "a") return "b";
+//     else if (letter === "b") return "a";
+//     // return everything else
+//     else return letter;
+//   });
+//   // concat letter from arr to string
+//   return xArr.join("");
+// }
+
+// result = switcheroo("aabacbaa");
+
+// console.log("aabacbaa");
+// console.log(result);
+
+// function mojaFunc() {
+//   let mojaVar = 10;
+
+//   if (true) {
+//     mojaVar = 11;
+//     console.log(mojaVar);
+//   }
+
+//   console.log(mojaVar);
+// }
+
+// mojaFunc();
+
+// for (var i = 0; i < 10; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 0);
+// }
+
+// function func3() {
+//   console.log("3 invoked");
+// }
+
+// function func2() {
+//   console.log("2 invoked");
+//   func3();
+// }
+
+// function func1() {
+//   console.log("1 invoked");
+// }
+
+// func1();
+// func2();
+
+// function func3() {
+//   console.log("aaaaaaaaaaaaaaaaaa");
+// }
+
+// function func2() {
+//   func3();
+// }
+
+// function func1() {
+//   func2();
+// }
+
+// func1();
+
+// function mojaFunc() {
+//   console.log("mojafunc");
+//   console.log("mojafunc");
+//   console.log("mojafunc");
+//   console.log("mojafunc");
+//   console.log("mojafunc");
+// }
+
+// drugaFunc = mojaFunc;
+
+// drugaFunc();
+// mojaFunc();
+
+// ====================================================================
+// function mojaFunc(arg1, arg2, arg3) {
+//   console.log("glavni posao");
+//   console.log("glavni posao");
+//   console.log("glavni posao");
+//   arg1();
+//   console.log(arg2);
+//   arg3();
+// }
+// mojaCLB = function () {
+//   console.log("lalalala");
+// };
+
+// mojaFunc(mojaCLB, { prop1: "HELLO WORLD" }, function () {
+//   console.log("asdsad");
+// });
+
+// myMap = function (argArr, clb) {
+//   const newArr = [];
+
+//   for (let i = 0; i < argArr.length; i++) {
+//     let newEl = clb(argArr[i]);
+
+//     newArr.push(newEl);
+//   }
+
+//   return newArr;
+// };
+
+// arr = [1, 2, 3, 4, 5, 3, 23];
+// function filter() {}
+// arr2 = myMap(arr, function (val) {
+//   return val + 10000;
+// });
+
+// arr3 = myMap(arr, function (el) {
+//   return "ELEMENT: " + el;
+// });
+
+// console.log(arr2);
+// console.log(arr3);
+
+// function filter(val) {
+//   return val > 10;
+// }
+// function mojfilter(arr, clb) {
+//   noviarr = [];
+//   for (i = 0; i < arr.length; i++) {
+//     if (clb(arr[i])) {
+//       noviarr.push(arr[i]);
+//     }
+//   }
+//   return noviarr;
+// }
+// console.log(mojfilter([2, 5, 19, 22, 2], filter));
+
+// function func3() {
+//   console.log("3 invoked");
+// }
+
+// function func2() {
+//   console.log("2 invoked");
+//   func3();
+// }
+
+// function func1() {
+//   console.log("1 invoked");
+// }
+
+// // func1();
+// // func2();
+
+// callStack = [];
+
+// callStack.push(func1);
+// callStack.pop(func1);
+
+// callStack.push(func2);
+// callStack.push(func3);
+
+// callStack.pop(func3);
+// callStack.pop(func2);
+
+// x = 5;
+
+// console.log(x);
+
+// var x;
+
+// console.log(functionBelow("Hello"));
+
+// function functionBelow(greet) {
+//   return `${greet} world`;
+// }
+
+// console.log(functionBelow("Hi"));
+// let x;
+
+// console.log(x);
+
+// x = 5;
+
+// function greetings() {
+//   console.log("nesto");
+
+//   console.log("nesto");
+
+//   let name;
+//   console.log("nesto");
+
+//   console.log(`Hello, ${name}`);
+// }
+
+// greetings();
+
+// function init() {
+//   var name = "Mozilla";
+//   var name132 = "Mozilla";
+
+//   function displayName() {
+//     console.log(name);
+//   }
+
+//   return displayName;
+// }
+
+// moajVar = init();
+
+// moajVar();
+
+// function mojaFunc() {
+//   var a;
+
+//   console.log("nesto");
+//   console.log("nesto");
+//   console.log("nesto");
+//   console.log("nesto");
+//   a = 10;
+//   console.log(a);
+//   if (true) {
+//     let b;
+
+//     console.log("if block");
+//     console.log("if block");
+//     console.log("if block");
+//     console.log("if block");
+//     console.log("if block");
+//     b = 10;
+//     console.log(b);
+//   }
+// }
+
+// nekaFunc();
+
+// const nekaFunc = function () {};
+
+// const mojaVar = class {};
+
+// function init() {
+//   var name = "Mozilla";
+//   var name132 = "Mozilla";
+
+//   function displayName() {
+//     console.log(name);
+//   }
+
+//   return displayName;
+// }
+
+// moajVar = init();
+// moajVar2 = init();
+// moajVar3 = init();
+// moajVar4 = init();
+
+// moajVar();
+// moajVar2();
+// moajVar3();
+// moajVar4();
+
+// function cFunction() {
+//   let privateCounter = 0;
+
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+
+//   return {
+//     increment() {
+//       changeBy(1);
+//     },
+//     decrement: function () {
+//       changeBy(-1);
+//     },
+//     value: function () {
+//       return privateCounter;
+//     },
+//     mojProp: "dzemil",
+//   };
+// }
+
+// const counter = cFunction();
+
+// console.log(counter.value());
+
+// counter.increment();
+// counter.increment();
+// console.log(counter.value());
+
+// counter.decrement();
+// console.log(counter.value());
+// console.log(counter.mojProp);
+
+// global scope
+
+// const e = 10;
+
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       return function (d) {
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+
+// // const sum2 = sum(1);
+// // const sum3 = sum2(2);
+// // const sum4 = sum3(3);
+
+// // const result = sum4(4);
+
+// // console.log(result);
+
+// console.log(sum(5)(3)(2)(3))
+
+// function showHelp(help) {
+//   document.getElementById("help").textContent = help;
+// }
+
+// function makeHelpCallback(help) {
+//   return function () {
+//     showHelp(help);
+//   };
+// }
+
+// function setupHelp() {
+//   var helpText = [
+//     { id: "email", help: "Your e-mail address" },
+//     { id: "name", help: "Your full name" },
+//     { id: "age", help: "Your age (you must be over 16)" },
+//   ];
+
+//   for (var i = 0; i < helpText.length; i++) {
+//     var item = helpText[i];
+//     document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
+//   }
+// }
+
+// setupHelp();
+
+// function showHelp(help) {
+//   document.getElementById("help").textContent = help;
+// }
+
+// function setupHelp() {
+//   var helpText = [
+//     { id: "email", help: "Your e-mail address" },
+//     { id: "name", help: "Your full name" },
+//     { id: "age", help: "Your age (you must be over 16)" },
+//   ];
+
+//   helpText.forEach(function (text) {
+//     document.getElementById(text.id).onfocus = function () {
+//       showHelp(text.help);
+//     };
+//   });
+// }
+
+// setupHelp();
+
+// class Car {
+//   constructor(n, y) {
+//     this.name = n;
+//     this.year = y;
+//     this.calcAge = 2022 - y;
+//   }
+// }
+
+// const myCar = new Car("Ford", 2014);
+
+// console.log(myCar);
+
+// const secondCar = new Car("Mercedes", 2020);
+
+// console.log(secondCar);
+
+// mojaVar = { name: "dzemil" };
+
+// console.log(myCar);
+// console.log(mojaVar);
+
+// var asdasda = Number("1");
+
+// class Person {
+//   constructor(nickname, favUtensil) {
+//     this.nickname = nickname;
+//     this.favUtensil = favUtensil;
+//   }
+
+//   eatsCereal() {
+//     return `${this.nickname} eats cereal with ${this.favUtensil}`;
+//   }
+
+//   operate() {
+//     return "umm, I am not a doctor. I don't do this.";
+//   }
+// }
+
+// mojaVar = new Person("dzemil", "pan");
+// result = mojaVar.eatsCereal();
+// console.log(result);
+
+// mojaVar2 = new Person("drugo", "serpa");
+// result2 = mojaVar2.eatsCereal();
+// console.log(result2);
+
+// class Person {
+//   constructor(nickname, favUtensil) {
+//     this.nickname = nickname;
+//     this.favUtensil = favUtensil;
+//     throw new Error("FYI: Instance of Abstract class cannot be instantiated");
+//   }
+
+//   eatsCereal() {
+//     return `${this.nickname} eats cereal with ${this.favUtensil}`;
+//   }
+
+//   operate() {
+//     console.log(
+//       "umm, I am not a doctor. I don't do this. ===================="
+//     );
+//   }
+// }
+
+// class Doctor extends Person {
+//   constructor(nickname, favUtensil, name, color, specialty) {
+//     //super passes down attributes from super class, in this case from Person
+//     super(nickname, favUtensil);
+//     this.name = name;
+//     this.scrubs = color;
+//     this.specialty = specialty;
+//   }
+
+//   medicalLicense() {
+//     console.log(`${this.name}, ${this.specialty}`);
+//   }
+// }
+
+// class Nurse extends Person {
+//   #nurseName;
+//   #jmbg;
+//   constructor(nickname, favUtensil, name, jmbg) {
+//     //super passes down attributes from super class,
+//     //in this case from Person
+//     super(nickname, favUtensil);
+//     this.#jmbg = jmbg;
+//     this.#nurseName = name + this.#jmbg;
+//   }
+
+//   medicalLicense() {
+//     console.log(`${this.#nurseName}, nurse`);
+//   }
+
+//   getJmbg() {
+//     console.log(this.#jmbg);
+//     return this.#jmbg;
+//   }
+//   setJmbg(val) {
+//     this.#jmbg = val;
+//   }
+// }
+
+// dr = new Doctor("dzd", "pan", "dzemil", "white", "neuro");
+// dr.medicalLicense();
+// dr.operate();
+
+// nr = new Nurse("smr", "glass", "samra", 123123123213);
+// nr.operate();
+// nr.medicalLicense();
+// console.log(nr.nurseName);
+
+// nr.getJmbg();
+
+// class firstClass {
+//   constructor(arg1) {
+//     this.prop1 = arg1;
+//     this.prop2 = "dzemil";
+//   }
+//   add() {
+//     console.log("First Method");
+//   }
+// }
+// class secondClass extends firstClass {
+//   add(val) {
+//     console.log(30 + 40, val);
+//   }
+//   add(val, val2) {
+//     console.log(30 + 40, val, val2);
+//   }
+// }
+
+// var ob = new firstClass("dupljak");
+// var ob2 = new firstClass("dupljak", "dzemil");
+
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+// var C1 = class {
+//   constructor() {
+//     console.log("asdasd");
+//   }
+// };
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+// console.log("nekidok");
+
+// c1 = new C1();
+
+// function nextBigger(n) {
+//   console.log(n);
+//   console.log("-------------");
+//   digits = n
+//     .toString()
+//     .split("")
+//     .map((d) => Number(d));
+//   if (digits[digits.length - 1] === 0) {
+//     debugger;
+//     digits.splice(digits.length - 1, 1);
+//     digits.splice(digits.length - 1, 0, 0);
+//     let resultNum = Number(digits.join(""));
+//     return resultNum;
+//   }
+//   for (let i = digits.length - 1; i >= 0; i--) {
+//     const digit = digits[i];
+
+//     for (let j = i - 1; j >= 0; j--) {
+//       const d = digits[j];
+//       if (digit > d) {
+//         let tmp = digit;
+
+//         digits.splice(i, 1);
+//         digits.splice(j, 0, tmp);
+//         let resultNum = Number(digits.join(""));
+//         console.log(resultNum);
+//         // if (resultNum > n) return resultNum;
+//       }
+//     }
+//   }
+//   if (Number(digits.join("")) > n) return Number(digits.join(""));
+//   return -1;
+// }
+
+// result = nextBigger(398653);
+// console.log(result);
+
+// result = nextBigger(3999854432);
+// console.log(3999854432, result, 4233458999, "--------------");
+
+// result = nextBigger(1234567980);
+// console.log(result);
+
+// request = {
+//   header: {
+//     host: "localhost:3000",
+//     remote: "my-app.com/user/",
+//     method: "GET",
+//     accept: "application/json, text/plain, */*",
+//   },
+// };
+
+// response = {
+//   header: {
+//     host: "localhost:3000",
+//     remote: "google.com/user",
+//     status: 201,
+//     accept: "application/json, text/plain, */*",
+//   },
+//   body: {
+//     error: 'no user with this id'
+//   },
+// };
+
+// mojafUNc = () => {
+//   console.log("moja func");
+// };
+
+// setTimeout(mojafUNc, 100);
+
+// setTimeout(() => {
+//   console.log("drugi posao");
+// }, 100);
+
+mojPosao = new Promise((res, rej) => {
+  responseStatus = 200;
+
+  if (responseStatus === 200) {
+    res("Uspensno zavrsen posao");
+  } else {
+    rej("failed to fetch");
+  }
+});
+
+// mojPosao
+//   .then((result) => {
+//     console.log("USPESNO");
+//     console.log(result);
+//     return "value!!!";
+//   })
+//   .catch((err) => {
+//     console.log("GRESKAAA", err);
+//     console.log(err);
+//   })
+//   .finally(() => {
+//     console.log("FINALY");
+//   });
+
+// fetch(
+//   "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits"
+// )
+//   .then((response) => response.json())
+//   .then((commits) => {
+//     console.log(commits);
+//   });
+
+// mojPosao = new Promise((resolve, reject) => {
+//   responseStatus = 400;
+
+//   for (let i = 0; i < 900000000; i++) {}
+
+//   if (responseStatus === 200) {
+//     resolve("Uspensno zavrsen posao");
+//   } else {
+//     reject("failed to fetch");
+//   }
+// });
+
+// mojPosao
+//   .then((result) => {
+//     console.log("USPESNO");
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log("GRESKAAA", err);
+//   });
+
+myUrl = `https://catfact.ninja/facts?page=${1}`;
+
+pageNum = Number(prompt("Unesite stranu"));
+myUrl = `https://catfact.ninja/facts?page=${pageNum}`;
+
+fetch(myUrl)
+  .then((response) => {
+    return response.json();
+  })
+  .then((responseBody) => {
+    console.log(responseBody);
+    data = responseBody;
+  })
+  .catch((err) => {
+    console.log("GRESKAAA", err);
   });
-
-  return xArr.join("");
-}
-
-result = switcheroo("aabacbaa");
-
-console.log("aabacbaa");
-console.log(result);
