@@ -5,12 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cats_style.css">
+
     <title>Document</title>
 </head>
 
 <body>
-    <!-- <script src="ap_grupa.js"></script> -->
+    <div class="container" id="container"></div>
+    <div class="footer">
+        <button id="prevPage" onclick="goToPrevPage()">PREV</button>
+        <button onclick="goToNextPage()">NEXT</button>
+    </div>
+
     <script src="index.js"></script>
+    <script>
+        let resData = null
+        const container = document.getElementById('container')
+
+        let myUrl = `https://catfact.ninja/facts?page=1`;
+
+        function getData() {
+            fetch(myUrl)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((responseBody) => {
+                    resData = responseBody
+                    responseBody.data.forEach(el => {
+                        container.appendChild(createCard(el))
+                    });
+                })
+                .catch((err) => {
+                    console.log("GRESKAAA", err);
+                });
+        }
+
+        function createCard(catFact) {
+            let card = document.createElement('p')
+            card.innerHTML = catFact.fact
+            card.classList.add("fact_card")
+            return card
+        }
+
+        function goToNextPage() {
+            if (!resData.next_page_url) {
+                return
+            }
+
+            container.innerHTML = ""
+            myUrl = resData.next_page_url
+            getData()
+        }
+
+        function goToPrevPage() {
+            if (!resData.prev_page_url) {
+                return
+            }
+            container.innerHTML = ""
+            myUrl = resData.prev_page_url
+            getData()
+        }
+
+        (function () {
+            getData()
+        })()
+
+
+    </script>
 </body>
 
 </html>

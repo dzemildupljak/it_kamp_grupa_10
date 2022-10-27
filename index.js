@@ -1436,15 +1436,15 @@
 //   console.log("drugi posao");
 // }, 100);
 
-mojPosao = new Promise((res, rej) => {
-  responseStatus = 200;
+// mojPosao = new Promise((res, rej) => {
+//   responseStatus = 200;
 
-  if (responseStatus === 200) {
-    res("Uspensno zavrsen posao");
-  } else {
-    rej("failed to fetch");
-  }
-});
+//   if (responseStatus === 200) {
+//     res("Uspensno zavrsen posao");
+//   } else {
+//     rej("failed to fetch");
+//   }
+// });
 
 // mojPosao
 //   .then((result) => {
@@ -1489,19 +1489,44 @@ mojPosao = new Promise((res, rej) => {
 //     console.log("GRESKAAA", err);
 //   });
 
-myUrl = `https://catfact.ninja/facts?page=${1}`;
+// myUrl = `https://catfact.ninja/facts?page=${1}`;
 
-pageNum = Number(prompt("Unesite stranu"));
-myUrl = `https://catfact.ninja/facts?page=${pageNum}`;
+// pageNum = Number(prompt("Unesite stranu"));
+// myUrl = `https://catfact.ninja/facts?page=${pageNum}`;
 
-fetch(myUrl)
-  .then((response) => {
-    return response.json();
-  })
-  .then((responseBody) => {
-    console.log(responseBody);
-    data = responseBody;
-  })
-  .catch((err) => {
-    console.log("GRESKAAA", err);
-  });
+// fetch(myUrl)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((responseBody) => {
+//     console.log(responseBody);
+//     data = responseBody;
+//   })
+//   .catch((err) => {
+//     console.log("GRESKAAA", err);
+//   });
+
+// body = {
+//   tagname: "body",
+//   childNodes: [div, div2, div3],
+// };
+
+// div = {
+//   tagName: "div",
+//   classList: ["nesto", "drugaClasa"],
+//   id: "nekiId",
+//   childNodes: [p, div2, span],
+// };
+
+// p = {
+//   tagName: "p",
+//   classList: ["nesto", "drugaClasa", "NoVAKLASA"],
+//   id: "nekiId",
+//   style: {
+//     backroundColor: "red",
+//     width: "100px",
+//     heigth: "200px",
+//   },
+// };
+
+// p.classList.addClass("NoVAKLASA");
