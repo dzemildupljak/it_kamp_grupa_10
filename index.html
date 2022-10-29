@@ -14,7 +14,9 @@
     <div class="container" id="container"></div>
     <div class="footer">
         <button id="prevPage" onclick="goToPrevPage()">PREV</button>
-        <button onclick="goToNextPage()">NEXT</button>
+        <div class="footer-pages" id="footer-pages">
+        </div>
+        <button id="nextPage" onclick="goToNextPage()">NEXT</button>
     </div>
 
     <script src="index.js"></script>
@@ -24,20 +26,58 @@
 
         let myUrl = `https://catfact.ninja/facts?page=1`;
 
-        function getData() {
-            fetch(myUrl)
+        function getData(url = myUrl) {
+            fetch(url)
                 .then((response) => {
                     return response.json();
                 })
                 .then((responseBody) => {
+
+                    toggleDisable(responseBody.prev_page_url, 'prevPage')
+                    toggleDisable(responseBody.next_page_url, 'nextPage')
+
                     resData = responseBody
+
                     responseBody.data.forEach(el => {
                         container.appendChild(createCard(el))
                     });
+                    responseBody.links.forEach(link => {
+                        console.log(link);
+                        goToPage(link)
+                    })
                 })
                 .catch((err) => {
                     console.log("GRESKAAA", err);
                 });
+        }
+
+
+        /**
+         * ova funckcija uklanja ili dodaje disabeld atribut u zavisntosi od argimenta
+         * @param  {string} url [description]
+         * @param  {string} elId [description]
+         */
+        function toggleDisable(url, elId) {
+            if (!url) {
+                document.getElementById(elId).disabled = true
+            } else {
+                document.getElementById(elId).disabled = false
+            }
+        }
+
+        function goToPage(pageObj) {
+            pageBtn = document.createElement("button")
+            pageBtn.innerHTML = pageObj.label
+
+            if (pageObj.active) {
+                pageBtn.setAttribute("disabled", true)
+
+            } else {
+                pageBtn.setAttribute("onclick", function () { getData(pageObj.url) })
+            }
+
+
+            document.getElementById("footer-pages").appendChild(pageBtn)
         }
 
         function createCard(catFact) {
