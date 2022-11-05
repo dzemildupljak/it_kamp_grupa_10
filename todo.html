@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 24px;
+        }
+
+        .task-item {
+            width: 100px;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="add-task">
+        <input type="text" name="taskText" id="task-text" value="" placeholder="Unesite text"
+            onChange="createTask(this)">
+        <button onclick="addTask()">Add task</button>
+    </div>
+    <ul class="todo-task-list" id="todo-task-list">
+    </ul>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const todoList = []
+
+        let todoTask = {}
+
+        function createTask(el) {
+            todoTask.text = el.value
+            todoTask.isDone = false
+        }
+
+        function addTask() {
+            if (!todoTask.text) {
+                return
+            }
+
+            todoList.push(todoTask)
+            todoTask = {}
+            document.getElementById('task-text').value = ""
+            console.log(todoList);
+            showTodoList()
+        }
+
+        function isDoneBox(isDoneArg) {
+            const isDoneInp = document.createElement("input")
+            isDoneInp.type = 'checkbox'
+            isDoneInp.checked = isDoneArg
+            isDoneInp.onchange = setToDoneTask()
+            return isDoneInp
+        }
+
+
+        function setToDoneTask() {
+
+        }
+
+
+        function showTodoList() {
+            const listContainer = document.getElementById('todo-task-list')
+            listContainer.innerHTML = ""
+
+            todoList.forEach((task) => {
+                const tEl = document.createElement('li')
+                tEl.classList.add('task-item')
+                tEl.innerHTML = task.text
+
+
+
+                tEl.appendChild(isDoneBox(task.isDone))
+
+                listContainer.appendChild(tEl)
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>

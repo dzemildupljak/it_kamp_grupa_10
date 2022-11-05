@@ -19,44 +19,27 @@
         <button id="nextPage" onclick="goToNextPage()">NEXT</button>
     </div>
 
-    <script src="index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- <script src="index.js"></script> -->
     <script>
         let resData = null
         const container = document.getElementById('container')
 
         let myUrl = `https://catfact.ninja/facts?page=1`;
 
-        function getData(url = myUrl) {
-            fetch(url)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((responseBody) => {
-
-                    toggleDisable(responseBody.prev_page_url, 'prevPage')
-                    toggleDisable(responseBody.next_page_url, 'nextPage')
-
-                    resData = responseBody
-
-                    responseBody.data.forEach(el => {
-                        container.appendChild(createCard(el))
-                    });
-                    responseBody.links.forEach(link => {
-                        console.log(link);
-                        goToPage(link)
-                    })
-                })
-                .catch((err) => {
-                    console.log("GRESKAAA", err);
-                });
+        function renderCards(data) {
+            data.forEach(el => {
+                container.appendChild(createCard(el))
+            });
         }
 
+        function renderPagination(data) {
+            data.forEach(link => {
+                goToPage(link)
+            })
+        }
 
-        /**
-         * ova funckcija uklanja ili dodaje disabeld atribut u zavisntosi od argimenta
-         * @param  {string} url [description]
-         * @param  {string} elId [description]
-         */
         function toggleDisable(url, elId) {
             if (!url) {
                 document.getElementById(elId).disabled = true
@@ -106,11 +89,25 @@
             getData()
         }
 
-        (function () {
-            getData()
+
+        async function getData(url = myUrl) {
+            try {
+                let response = await axios.get(url)
+
+                resData = response.data
+
+                toggleDisable(response.data.prev_page_url, 'prevPage')
+                toggleDisable(response.data.next_page_url, 'nextPage')
+                renderCards(response.data.data)
+                renderPagination(response.data.links)
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        (async function () {
+            await getData()
         })()
-
-
     </script>
 </body>
 

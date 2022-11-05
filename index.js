@@ -1530,3 +1530,26 @@
 // };
 
 // p.classList.addClass("NoVAKLASA");
+
+async function getData() {
+  const myUrl = `https://catfact.ninja/facts?page=${1}`;
+
+  try {
+    const res = await fetch(myUrl);
+    const resJson = await res.json();
+
+    return resJson;
+  } catch (error) {
+    console.log(error);
+    return false;
+  } finally {
+    console.log("uvek se izvrsi");
+  }
+}
+
+(async function () {
+  const mydata = await getData();
+
+  console.log(mydata);
+  console.log("HELLO WORLD");
+})();
