@@ -30,12 +30,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         const todoList = []
+        let idGenerator = 1
 
         let todoTask = {}
 
         function createTask(el) {
             todoTask.text = el.value
             todoTask.isDone = false
+            todoTask.id = idGenerator
+            idGenerator++
         }
 
         function addTask() {
@@ -46,22 +49,35 @@
             todoList.push(todoTask)
             todoTask = {}
             document.getElementById('task-text').value = ""
-            console.log(todoList);
+
             showTodoList()
         }
 
         function isDoneBox(isDoneArg) {
             const isDoneInp = document.createElement("input")
+
             isDoneInp.type = 'checkbox'
             isDoneInp.checked = isDoneArg
-            isDoneInp.onchange = setToDoneTask()
+            isDoneInp.onchange = function (e) {
+
+                if (e.target.checked) {
+                    document.getElementById(isDoneInp.parentElement.id).style.textDecoration = 'line-through'
+                } else {
+                    document.getElementById(isDoneInp.parentElement.id).style.textDecoration = 'none'
+                }
+
+                todoList.forEach(t => {
+                    if (t.id === Number(isDoneInp.parentElement.id)) {
+                        t.isDone = !t.isDone
+                    }
+                })
+            }
+
             return isDoneInp
         }
 
 
-        function setToDoneTask() {
 
-        }
 
 
         function showTodoList() {
@@ -71,11 +87,19 @@
             todoList.forEach((task) => {
                 const tEl = document.createElement('li')
                 tEl.classList.add('task-item')
+                tEl.id = task.id
+
                 tEl.innerHTML = task.text
 
 
 
                 tEl.appendChild(isDoneBox(task.isDone))
+
+                if (task.isDone) {
+                    tEl.style.textDecoration = 'line-through'
+                } else {
+                    tEl.style.textDecoration = 'none'
+                }
 
                 listContainer.appendChild(tEl)
             })
